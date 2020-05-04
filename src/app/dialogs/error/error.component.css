@@ -1,0 +1,12 @@
+h2
+{
+  text-align: center;
+  color: red;
+}
+mat-divider{
+  margin-bottom: 7px;
+}
+button
+{
+  margin: 0 auto;
+}

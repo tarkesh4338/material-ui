@@ -1,0 +1,42 @@
+<mat-spinner class="spinner" [style.display]="loading ? 'block' : 'none'"></mat-spinner>
+
+<div class="mat-elevation-z8 table-data">
+  <table mat-table [dataSource]="dataSource" matSort
+  [style.display]="!loading ? 'table' : 'none'"
+  >
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header
+      style="text-align: center;"
+      > Customer Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="job">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Job </th>
+      <td mat-cell *matCellDef="let element"> {{element.job}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button color="primary" (click)="editCustomer(element.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button color="warn" (click)="deleteCustomer(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons
+  [style.display]="!loading ? 'block' : 'none'" class="paginator"
+  ></mat-paginator>
+  </div>

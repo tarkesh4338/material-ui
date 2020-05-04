@@ -1,0 +1,31 @@
+.spinner{
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+table {
+  width: 100%;
+}
+.table-data
+{
+  margin: 40px;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+}
+.mat-header-cell {
+  flex-direction: column;
+  justify-content: center;
+}
+.mat-cell {
+  text-align: center;
+  justify-content:center;
+}
+
+.center
+{
+  text-align: center;
+}
